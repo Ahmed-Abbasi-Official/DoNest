@@ -1,9 +1,10 @@
-import Image from "next/image";
+import AddTodo from "@/components/AddTodo";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-white">Ahmed Abbasi</h1>
-    </div>
+    <main>
+      <h2>TODO NEXT + TYPESCRIPT</h2>
+      <AddTodo/>
+    </main>
   );
 }
