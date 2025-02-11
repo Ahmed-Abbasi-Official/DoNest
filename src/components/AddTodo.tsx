@@ -1,9 +1,10 @@
 "use client"
+import { useTodos } from "@/store/Todos.Context";
 import { FormEvent, useState } from "react"
 
 const AddTodo = () => {
-
     const [todo,setTodo]=useState('');
+    const {handleAddTodo}=useTodos();
     console.log(todo)
 
     // ON SUBMIT
@@ -17,14 +18,15 @@ const AddTodo = () => {
 
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} className="flex  gap-2">
         <input 
         type="text" 
         placeholder="Write your todo"  
         value={todo}
         onChange={(e)=>setTodo(e.target.value)}
+        className="text-black outline-none px-4 py-1 rounded"
         />
-        <button type="submit">ADD</button>
+        <button type="submit" className="bg-[#021021] border-2 border-white py-1 px-2 rounded">ADD</button>
     </form>
   )
 }
